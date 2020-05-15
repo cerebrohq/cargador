@@ -59,7 +59,7 @@ sleep 5
 
 docker pull cerebro1/cargador:latest
 
-if [ ! -f "./config/start_cargador.sh" ] ; then
+if [ ! -f "./start_cargador.sh" ] ; then
 	curl -fsSL https://raw.githubusercontent.com/cerebrohq/cargador/master/start_cargador.sh -o ./start_cargador.sh
 	curl -fsSL https://raw.githubusercontent.com/cerebrohq/cargador/master/stop_cargador.sh -o ./stop_cargador.sh
 	curl -fsSL https://raw.githubusercontent.com/cerebrohq/cargador/master/restart_cargador.sh -o ./restart_cargador.sh
