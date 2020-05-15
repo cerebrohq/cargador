@@ -4,18 +4,12 @@ command_exists() {
 	command -v "$@" > /dev/null 2>&1
 }
 
-while getopts ":u:" opt; do
-	case $opt in
-		u ) parameterU="$OPTARG";;
-	esac
-done
-
 mkdir -p ./logs
 
 echo "Installing docker..."
 
-if !(command_exists docker) || [[ "$parameterU" == "true" ]] ; then
-	if !(command_exists curl); then
+if !(command_exists docker) ; then
+	if !(command_exists curl) ; then
 		echo "curl command not found, please install curl"
 		exit 2
 	fi
