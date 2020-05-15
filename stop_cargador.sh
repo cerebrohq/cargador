@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if docker stop cerebro1/cargador > /dev/null && \
-    docker rm cerebro1/cargador > /dev/null ; then
+if docker stop cargador > /dev/null && \
+    docker rm cargador > /dev/null ; then
 	echo "container stopped successfully"
 fi
