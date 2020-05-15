@@ -54,6 +54,8 @@ curl -fsSL https://raw.githubusercontent.com/cerebrohq/cargador/master/install_d
 chmod +x install_docker.sh
 sh install_docker.sh
 
+systemctl restart docker
+
 docker pull cerebro1/cargador:latest
 
 if [ ! -f "./config/start_cargador.sh" ] ; then
