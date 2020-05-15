@@ -55,6 +55,7 @@ chmod +x install_docker.sh
 sh install_docker.sh
 
 systemctl restart docker
+sleep 5
 
 docker pull cerebro1/cargador:latest
 
