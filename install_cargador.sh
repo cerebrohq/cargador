@@ -5,6 +5,8 @@ if [ -f "./stop_cargador.sh" ] ; then
 fi
 
 mkdir -p ./config
+mkdir -p ./config/.system
+mkdir -p ./config/ssl
 mkdir -p ./logs
 mkdir -p ./backup
 
@@ -63,10 +65,12 @@ if [ ! -f "./start_cargador.sh" ] ; then
 	curl -fsSL https://raw.githubusercontent.com/cerebrohq/cargador/master/start_cargador.sh -o ./start_cargador.sh
 	curl -fsSL https://raw.githubusercontent.com/cerebrohq/cargador/master/stop_cargador.sh -o ./stop_cargador.sh
 	curl -fsSL https://raw.githubusercontent.com/cerebrohq/cargador/master/restart_cargador.sh -o ./restart_cargador.sh
+	curl -fsSL https://raw.githubusercontent.com/cerebrohq/cargador/master/restoreDB.sh -o ./restoreDB.sh
 	
 	chmod +x start_cargador.sh
 	chmod +x stop_cargador.sh
 	chmod +x restart_cargador.sh
+	chmod +x restoreDB.sh
 	
 	sed -i -E "s~4040:4040~${crpcport}:${crpcport}~g" ./start_cargador.sh
 	sed -i -E "s~4080:4080~${chttpport}:${chttpport}~g" ./start_cargador.sh
