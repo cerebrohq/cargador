@@ -91,6 +91,10 @@ OPTS = {
 #	, 'ldap_encoding': 'cp1251' # code page to translate from multi-bytes to Unicode
 #	, 'ldap_verbose': True # Log syncing errors
 #	, 'ldap_email_default_domain' : '' append this string if 'email' does not contain <@suff.ix>
+
+#	Cargador Files database backup options
+	, 'catalog_backup_dir' : '/cerebro/backup' # backup directory
+	, 'catalog_backup_rotate' : 7 # backup rotation (count of last backup files)
 }
 
 
