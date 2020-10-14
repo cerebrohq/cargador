@@ -1,5 +1,8 @@
-#!/bin/bash
+docker exec cargador /bin/sh -c "/cerebro/cargador/restoreDB.sh $*"
 
-DIRNAME=$(dirname 0)
+./stop_cargador.sh
 
-$DIRNAME/py-site-packages/python.sh $DIRNAME/cron/backupCatalog.py restore $*
+rm ./config/.system/catalog.sqlite
+mv ./config/.system/catalog.sqlite.new ./config/.system/catalog.sqlite
+
+./start_cargador.sh
