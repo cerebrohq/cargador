@@ -16,7 +16,7 @@ if docker build --tag cerebro1/cargador . ; then
 	read -p "Do you want to upload this build to repo?[Y/N]" -n 1 -r
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then
-		docker login --username=cerebro1 --password 4491d140-f105-48b7-aa14-c910a7adeca7
+		docker login --username=cerebro1 --password $1
 		docker push cerebro1/cargador
 	fi
 fi
